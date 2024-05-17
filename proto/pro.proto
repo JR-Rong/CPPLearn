@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package config;
+
+message personList {
+  // Application配置
+  message person {
+    string name = 1; // 应用名称
+    int32 age = 2;      // 监听端口
+    string email = 3;  // 应用版本
+  }
+  repeated person people = 1;  //
+}

@@ -73,6 +73,7 @@ function build_all() {
     if [ "$BUILD_WAY" = "both" ] || [ "$BUILD_WAY" = "cmake" ]; then
         echo "Start cmake building..."
         cd ${BUILD_DIR}
+        protoc -I=../proto --cpp_out=. ../proto/pro.proto
         cmake ..
         make PREFIX=${INSTALL_DIR} install
         cd ${root_dir}
