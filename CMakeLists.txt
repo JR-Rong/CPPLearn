@@ -23,7 +23,13 @@ add_executable(learn-proto ${CMAKE_CURRENT_SOURCE_DIR}/src/proto_learn.cpp
     ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(learn-proto PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
-install(TARGETS 
-    learn-callonce
-    learn-proto 
-    DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/install)
+add_executable(learn-socket-send ${CMAKE_CURRENT_SOURCE_DIR}/src/socket/sender.cpp ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(learn-socket-send PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
+add_executable(learn-socket-receive ${CMAKE_CURRENT_SOURCE_DIR}/src/socket/receiver.cpp ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(learn-socket-receive PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
+# install(TARGETS 
+#     learn-callonce
+#     learn-proto 
+#     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/install)
