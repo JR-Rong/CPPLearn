@@ -53,7 +53,7 @@ parse_args() {
         esac
     done
     if [ -z ${BUILD_WAY} ]; then
-        BUILD_WAY="both"
+        BUILD_WAY="cmake"
     fi
 }
 
@@ -75,7 +75,8 @@ function build_all() {
         cd ${BUILD_DIR}
         protoc -I=../proto --cpp_out=. ../proto/pro.proto
         cmake ..
-        make PREFIX=${INSTALL_DIR} install
+        # make PREFIX=${INSTALL_DIR} install
+        make -j 8
         cd ${root_dir}
         echo "Finished cmake building"
     fi

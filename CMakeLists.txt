@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(protobuf_MODULE_COMPATIBLE TRUE)
 
-find_package(Protobuf REQUIRED CONFIG)
+find_package(Protobuf REQUIRED)
 
 include_directories(${PROTOBUF_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -28,6 +28,8 @@ target_link_libraries(learn-socket-send PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_TH
 
 add_executable(learn-socket-receive ${CMAKE_CURRENT_SOURCE_DIR}/src/socket/receiver.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 target_link_libraries(learn-socket-receive PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
+add_executable(learn-crtp ${CMAKE_CURRENT_SOURCE_DIR}/src/crtp.cpp)
 
 # install(TARGETS 
 #     learn-callonce

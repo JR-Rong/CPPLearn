@@ -221,3 +221,6 @@ public:
 ### 总结
 
 在您提供的代码片段`class Factory : public FactoryInterface<Factory>`中，`Factory`类通过继承自`FactoryInterface<Factory>`，使用了CRTP模式。这样的设计可能允许`FactoryInterface`通过模板编程提供一些共通的实现，同时`Factory`类还可以通过覆盖这些实现或提供额外的功能，来满足具体的需求。而具体`FactoryInterface`提供了哪些功能和如何设计的细节，需要查看`FactoryInterface`的实现来确定。
+
+---
+
