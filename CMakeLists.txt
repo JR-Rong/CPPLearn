@@ -3,7 +3,7 @@ project(learn)
 
 set(CMAKE_CXX_STANDARD 17) # 设置 C++ 标准为 C++11
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_BUILD_TYPE Debug)
 set(protobuf_MODULE_COMPATIBLE TRUE)
 
 find_package(Protobuf REQUIRED)
@@ -30,6 +30,8 @@ add_executable(learn-socket-receive ${CMAKE_CURRENT_SOURCE_DIR}/src/socket/recei
 target_link_libraries(learn-socket-receive PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 add_executable(learn-crtp ${CMAKE_CURRENT_SOURCE_DIR}/src/crtp.cpp)
+
+add_executable(template_type_deduction ${CMAKE_CURRENT_SOURCE_DIR}/src/effective-cpp/template_type_deduction.cpp)
 
 # install(TARGETS 
 #     learn-callonce
