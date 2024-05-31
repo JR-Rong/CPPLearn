@@ -33,6 +33,12 @@ add_executable(learn-crtp ${CMAKE_CURRENT_SOURCE_DIR}/src/crtp.cpp)
 
 add_executable(template_type_deduction ${CMAKE_CURRENT_SOURCE_DIR}/src/effective-cpp/template_type_deduction.cpp)
 
+add_executable(log_marco ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/a.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/b.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/main.cpp
+)
+
+
 # install(TARGETS 
 #     learn-callonce
 #     learn-proto 
