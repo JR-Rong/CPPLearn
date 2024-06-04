@@ -31,13 +31,14 @@ target_link_libraries(learn-socket-receive PRIVATE ${PROTOBUF_LIBRARIES} ${CMAKE
 
 add_executable(learn-crtp ${CMAKE_CURRENT_SOURCE_DIR}/src/crtp.cpp)
 
-add_executable(template_type_deduction ${CMAKE_CURRENT_SOURCE_DIR}/src/effective-cpp/template_type_deduction.cpp)
+add_executable(template_type_deduction ${CMAKE_CURRENT_SOURCE_DIR}/src/effective-cpp/item01_template_type_deduction.cpp)
+add_executable(auto_type_deduction ${CMAKE_CURRENT_SOURCE_DIR}/src/effective-cpp/item02_auto_type_deduction.cpp)
 
 add_executable(log_marco ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/a.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/b.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/src/log-marco/main.cpp
 )
-
+target_link_libraries(log_marco PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 
 # install(TARGETS 
 #     learn-callonce
