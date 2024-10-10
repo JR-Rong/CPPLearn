@@ -45,6 +45,10 @@ target_link_libraries(log_marco PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 add_executable(condition ${CMAKE_CURRENT_SOURCE_DIR}/src/condition/condition.cpp)
 target_link_libraries(condition PRIVATE ${CMAKE_THREAD_LIBS_INIT})
 
+add_executable(socket-sender ${CMAKE_CURRENT_SOURCE_DIR}/src/socket_multi/sender.cpp)
+
+add_executable(socket-receiver ${CMAKE_CURRENT_SOURCE_DIR}/src/socket_multi/reciever.cpp)
+
 # install(TARGETS 
 #     learn-callonce
 #     learn-proto 
